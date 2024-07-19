@@ -63,10 +63,13 @@ class _AppEntryPointState extends State<AppEntryPoint> {
                       ),
                       label: 'wishlist'),
                   BottomNavigationBarItem(
-                      icon: Icon(
-                        MaterialCommunityIcons.shopping_outline,
-                        color: Kolors.kPrimary,
-                        size: 24,
+                      icon: Badge(
+                        label: Text('9'),
+                        child: Icon(
+                          MaterialCommunityIcons.shopping_outline,
+                          color: Kolors.kPrimary,
+                          size: 24,
+                        ),
                       ),
                       label: 'cart'),
                   BottomNavigationBarItem(
