@@ -26,6 +26,7 @@ import 'package:fashion/src/splashscreen/splash_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:test_fashion_app_django/entry_point/app_entry_point.dart';
+import 'package:test_fashion_app_django/screens/login/login_screen.dart';
 import 'package:test_fashion_app_django/screens/on_boarding/on_boarding_screen.dart';
 import 'package:test_fashion_app_django/screens/splash_screen.dart';
 
@@ -72,10 +73,10 @@ final GoRouter _router = GoRouter(
 //       path: '/orders',
 //       builder: (context, state) => const OrdersPage(),
 //     ),
-//     GoRoute(
-//       path: '/login',
-//       builder: (context, state) => const LoginPage(),
-//     ),
+    GoRoute(
+      path: '/login',
+      builder: (context, state) => const LoginScreen(),
+    ),
 //     GoRoute(
 //       path: '/register',
 //       builder: (context, state) => const RegistrationPage(),

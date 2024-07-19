@@ -76,7 +76,9 @@ class _LastPageState extends State<LastPage> {
                   ),
                 ),
                 TextButton(
-                  onPressed: () {},
+                  onPressed: () {
+                    context.go('/login');
+                  },
                   child: const Text(
                     'Sign In',
                     style: TextStyle(

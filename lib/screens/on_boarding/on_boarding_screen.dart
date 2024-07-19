@@ -1,6 +1,4 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_vector_icons/flutter_vector_icons.dart';
 import 'package:page_view_dot_indicator/page_view_dot_indicator.dart';
@@ -57,7 +55,6 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
                     width: ScreenUtil().screenWidth,
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      crossAxisAlignment: CrossAxisAlignment.center,
                       children: [
                         context.watch<OnBoardingController>().selectedIndex == 0
                             ? const SizedBox(width: 25)
