@@ -1,4 +1,6 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_vector_icons/flutter_vector_icons.dart';
 import 'package:page_view_dot_indicator/page_view_dot_indicator.dart';
@@ -46,41 +48,77 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
               LastPage(),
             ],
           ),
-          Positioned(
-            bottom: 50.h,
-            child: Container(
-              padding: EdgeInsets.symmetric(horizontal: 20.w),
-              width: ScreenUtil().screenWidth,
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                crossAxisAlignment: CrossAxisAlignment.center,
-                children: [
-                  const Icon(
-                    AntDesign.leftcircleo,
-                    color: Kolors.kPrimary,
-                    size: 30,
-                  ),
-                  SizedBox(
-                    width: ScreenUtil().screenWidth * 0.7,
-                    height: 50.h,
-                    child: PageViewDotIndicator(
-                      currentItem:
-                          context.watch<OnBoardingController>().selectedIndex,
-                      count: 3,
-                      unselectedColor: Colors.black26,
-                      selectedColor: Kolors.kPrimary,
-                      duration: const Duration(milliseconds: 200),
+          context.watch<OnBoardingController>().selectedIndex == 2
+              ? const SizedBox.shrink()
+              : Positioned(
+                  bottom: 50.h,
+                  child: Container(
+                    padding: EdgeInsets.symmetric(horizontal: 20.w),
+                    width: ScreenUtil().screenWidth,
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      crossAxisAlignment: CrossAxisAlignment.center,
+                      children: [
+                        context.watch<OnBoardingController>().selectedIndex == 0
+                            ? const SizedBox(width: 25)
+                            : GestureDetector(
+                                onTap: () {
+                                  pageController.animateToPage(
+                                    context
+                                            .read<OnBoardingController>()
+                                            .selectedIndex -
+                                        1,
+                                    duration: const Duration(milliseconds: 200),
+                                    curve: Curves.easeIn,
+                                  );
+                                },
+                                child: const Icon(
+                                  AntDesign.leftcircleo,
+                                  color: Kolors.kPrimary,
+                                  size: 30,
+                                ),
+                              ),
+                        SizedBox(
+                          width: ScreenUtil().screenWidth * 0.7,
+                          height: 50.h,
+                          child: PageViewDotIndicator(
+                            currentItem: context
+                                .watch<OnBoardingController>()
+                                .selectedIndex,
+                            count: 3,
+                            unselectedColor: Colors.black26,
+                            selectedColor: Kolors.kPrimary,
+                            duration: const Duration(milliseconds: 200),
+                            onItemClicked: (index) {
+                              pageController.animateToPage(
+                                index,
+                                duration: const Duration(milliseconds: 200),
+                                curve: Curves.easeIn,
+                              );
+                            },
+                          ),
+                        ),
+                        GestureDetector(
+                          onTap: () {
+                            pageController.animateToPage(
+                              context
+                                      .read<OnBoardingController>()
+                                      .selectedIndex +
+                                  1,
+                              duration: const Duration(milliseconds: 200),
+                              curve: Curves.easeIn,
+                            );
+                          },
+                          child: const Icon(
+                            AntDesign.rightcircleo,
+                            color: Kolors.kPrimary,
+                            size: 30,
+                          ),
+                        ),
+                      ],
                     ),
                   ),
-                  const Icon(
-                    AntDesign.rightcircleo,
-                    color: Kolors.kPrimary,
-                    size: 30,
-                  ),
-                ],
-              ),
-            ),
-          ),
+                ),
         ],
       ),
     );
