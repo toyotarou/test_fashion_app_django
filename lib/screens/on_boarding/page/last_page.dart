@@ -6,6 +6,7 @@ import 'package:test_fashion_app_django/common/utils/kcolors.dart';
 import 'package:test_fashion_app_django/common/utils/kstrings.dart';
 import 'package:test_fashion_app_django/common/widgets/app_style.dart';
 import 'package:test_fashion_app_django/common/widgets/custom_button.dart';
+import 'package:test_fashion_app_django/common/widgets/reusable_text.dart';
 import 'package:test_fashion_app_django/const/resource.dart';
 
 class LastPage extends StatefulWidget {
@@ -25,7 +26,7 @@ class _LastPageState extends State<LastPage> {
         color: Kolors.kWhite,
         child: Column(
           children: [
-            SizedBox(height: 100.h),
+            SizedBox(height: 50.h),
             Image.asset(R.ASSETS_IMAGES_GETSTARTED_PNG),
             SizedBox(height: 30.h),
             Text(
@@ -61,6 +62,30 @@ class _LastPageState extends State<LastPage> {
               btnHieght: 35,
               radius: 20,
               btnWidth: ScreenUtil().screenWidth - 100,
+            ),
+            SizedBox(height: 20.h),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                ReusableText(
+                  text: 'account having',
+                  style: appStyle(
+                    12,
+                    Kolors.kDark,
+                    FontWeight.normal,
+                  ),
+                ),
+                TextButton(
+                  onPressed: () {},
+                  child: const Text(
+                    'Sign In',
+                    style: TextStyle(
+                      fontSize: 12,
+                      color: Colors.blue,
+                    ),
+                  ),
+                ),
+              ],
             ),
           ],
         ),
