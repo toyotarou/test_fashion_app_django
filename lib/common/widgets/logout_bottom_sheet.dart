@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:go_router/go_router.dart';
-import 'package:provider/provider.dart';
 import 'package:test_fashion_app_django/common/services/storage.dart';
 import 'package:test_fashion_app_django/common/utils/kcolors.dart';
 import 'package:test_fashion_app_django/common/utils/kstrings.dart';
@@ -44,12 +43,12 @@ Future<dynamic> logoutBottomSheet(BuildContext context) {
               height: 20.h,
             ),
             Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 8.0),
+              padding: const EdgeInsets.symmetric(horizontal: 8),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   GradientBtn(
-                    text: "Cancel",
+                    text: 'Cancel',
                     borderColor: Kolors.kDark,
                     btnColor: Kolors.kWhite,
                     onTap: () => Navigator.pop(context),
@@ -58,12 +57,12 @@ Future<dynamic> logoutBottomSheet(BuildContext context) {
                     btnWidth: ScreenUtil().screenWidth / 2.2,
                   ),
                   GradientBtn(
-                    text: "Yes, Logout",
+                    text: 'Yes, Logout',
                     onTap: () {
                       Storage().removeKey('accessToken');
 //                      context.read<TabIndexNotifier>().tabIndex = 0;
-                      context.go("/home");
-                      context.pop();
+                      context..go('/home')
+                      ..pop();
                     },
                     btnHieght: 35.h,
                     radius: 16,

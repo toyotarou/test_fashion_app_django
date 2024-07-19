@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:test_fashion_app_django/controller/on_boarding_controller.dart';
+import 'package:test_fashion_app_django/screens/on_boarding/page/last_page.dart';
 import 'package:test_fashion_app_django/screens/on_boarding/page/page1.dart';
 import 'package:test_fashion_app_django/screens/on_boarding/page/page2.dart';
-import 'package:test_fashion_app_django/screens/on_boarding/page/last_page.dart';
 
 class OnBoardingScreen extends StatefulWidget {
   const OnBoardingScreen({super.key});
@@ -36,7 +36,7 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
             onPageChanged: (value) {
               context.read<OnBoardingController>().setSelectedIndex = value;
             },
-            children: [
+            children: const [
               Page1(),
               Page2(),
               LastPage(),

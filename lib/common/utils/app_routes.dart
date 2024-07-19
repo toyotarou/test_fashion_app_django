@@ -41,7 +41,7 @@ final GoRouter _router = GoRouter(
     ),
     GoRoute(
       path: '/home',
-      builder: (context, state) => AppEntryPoint(),
+      builder: (context, state) => const AppEntryPoint(),
     ),
     GoRoute(
       path: '/onboarding',

@@ -16,12 +16,11 @@ class SuccessfulPayment extends StatelessWidget {
       appBar: AppBar(
         automaticallyImplyLeading: false,
         title: ReusableText(
-            text: "Payment",
+            text: 'Payment',
             style: appStyle(16, Kolors.kPrimary, FontWeight.w600)),
       ),
       body: Column(
         mainAxisAlignment: MainAxisAlignment.center,
-        crossAxisAlignment: CrossAxisAlignment.center,
         children: [
           Center(
             child: Image.asset(
@@ -62,7 +61,7 @@ class SuccessfulPayment extends StatelessWidget {
               BoxDecoration(color: Kolors.kPrimary, borderRadius: kRadiusTop),
           child: Center(
             child: ReusableText(
-                text: "Continue to Home",
+                text: 'Continue to Home',
                 style: appStyle(16, Kolors.kWhite, FontWeight.w600)),
           ),
         ),

@@ -11,12 +11,11 @@ class ListShimmer extends StatelessWidget {
       padding: const EdgeInsets.only(left: 12, top: 10),
       height: ScreenUtil().screenHeight,
       child: ListView.builder(
-          scrollDirection: Axis.vertical,
           padding: EdgeInsets.zero,
           itemCount: 6,
           itemBuilder: (context, index) {
             return Padding(
-              padding: const EdgeInsets.only(bottom: 8.0, right: 6),
+              padding: const EdgeInsets.only(bottom: 8, right: 6),
               child: ShimmerWidget(
                   shimmerWidth: ScreenUtil().screenWidth,
                   shimmerHieght: 70.h,

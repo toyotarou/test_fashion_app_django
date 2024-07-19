@@ -36,7 +36,7 @@ class CustomTextField extends StatelessWidget {
         controller: controller,
         validator: (value) {
           if (value!.isEmpty) {
-            return "Please enter a valid value";
+            return 'Please enter a valid value';
           } else {
             return null;
           }

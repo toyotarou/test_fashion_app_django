@@ -12,10 +12,10 @@ Future<dynamic> showHelpCenterBottomSheet(BuildContext context) {
         height: MediaQuery.of(context).size.height * 0.7,
         decoration: const BoxDecoration(
           color: Colors.white,
-          borderRadius: BorderRadius.vertical(top: Radius.circular(20.0)),
+          borderRadius: BorderRadius.vertical(top: Radius.circular(20)),
         ),
         child: Padding(
-          padding: const EdgeInsets.all(20.0),
+          padding: const EdgeInsets.all(20),
           child: Column(
             mainAxisSize: MainAxisSize.min,
             crossAxisAlignment: CrossAxisAlignment.start,
@@ -23,7 +23,7 @@ Future<dynamic> showHelpCenterBottomSheet(BuildContext context) {
               Text(
                 'Fashion App Help Center',
                 style: appStyle(
-                  18.0,
+                  18,
                   Kolors.kPrimary,
                   FontWeight.bold,
                 ),
@@ -34,16 +34,16 @@ Future<dynamic> showHelpCenterBottomSheet(BuildContext context) {
               Text(
                 'We\'re here to help! Find answers to frequently asked questions or contact our support team.',
                 textAlign: TextAlign.center,
-                style: appStyle(16.0, Kolors.kDark, FontWeight.normal),
+                style: appStyle(16, Kolors.kDark, FontWeight.normal),
               ),
               SizedBox(height: 15.h),
 
               // FAQ Section (Replace with actual FAQs)
               const Text(
                 'FAQs:',
-                style: TextStyle(fontSize: 16.0, fontWeight: FontWeight.bold),
+                style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
               ),
-              const SizedBox(height: 5.0),
+              const SizedBox(height: 5),
               ListTile(
                 contentPadding: EdgeInsets.zero,
                 title: const Text('Can I return an item?'),
@@ -67,21 +67,21 @@ Future<dynamic> showHelpCenterBottomSheet(BuildContext context) {
                 },
               ),
 
-              const SizedBox(height: 15.0),
+              const SizedBox(height: 15),
 
               // Contact Section
               const Text(
                 'Contact Us:',
-                style: TextStyle(fontSize: 16.0, fontWeight: FontWeight.bold),
+                style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
               ),
               SizedBox(height: 10.h),
               const Row(
                 children: [
                   Icon(MaterialCommunityIcons.email_outline),
-                  SizedBox(width: 10.0),
+                  SizedBox(width: 10),
                   Text(
                     'support@fashionapp.com',
-                    style: TextStyle(fontSize: 16.0),
+                    style: TextStyle(fontSize: 16),
                   ),
                 ],
               ),
@@ -90,10 +90,10 @@ Future<dynamic> showHelpCenterBottomSheet(BuildContext context) {
               const Row(
                 children: [
                   Icon(MaterialCommunityIcons.phone_outline),
-                  SizedBox(width: 10.0),
+                  SizedBox(width: 10),
                   Text(
                     '+860000000000',
-                    style: TextStyle(fontSize: 16.0),
+                    style: TextStyle(fontSize: 16),
                   ),
                 ],
               ),

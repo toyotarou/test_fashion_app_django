@@ -59,4 +59,4 @@ class AppText {
 }
 
 // Your Wishlist awaits! Curate your dream looks and save favorites for later. It's the first step to making style aspirations a reality
-// 
+//

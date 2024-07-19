@@ -1,4 +1,4 @@
-// ignore_for_file: unnecessary_null_in_if_null_operators
+// ignore_for_file: unnecessary_null_in_if_null_operators, use_named_constants
 
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -13,7 +13,7 @@ class TabWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: const EdgeInsets.symmetric(horizontal: 0),
+      margin: const EdgeInsets.symmetric(),
       width: divider?? ScreenUtil().screenWidth /5,
       height: 18,
       child: Center(

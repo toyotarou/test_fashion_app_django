@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:go_router/go_router.dart';
-import 'package:provider/provider.dart';
 import 'package:test_fashion_app_django/common/utils/kcolors.dart';
 import 'package:test_fashion_app_django/common/widgets/app_style.dart';
 import 'package:test_fashion_app_django/common/widgets/reusable_text.dart';
@@ -17,12 +16,11 @@ class FailedPayment extends StatelessWidget {
       appBar: AppBar(
         automaticallyImplyLeading: false,
         title: ReusableText(
-            text: "Payment",
+            text: 'Payment',
             style: appStyle(16, Kolors.kPrimary, FontWeight.w600)),
       ),
       body: Column(
         mainAxisAlignment: MainAxisAlignment.center,
-        crossAxisAlignment: CrossAxisAlignment.center,
         children: [
           Center(
             child: Image.asset(
@@ -63,7 +61,7 @@ class FailedPayment extends StatelessWidget {
               BoxDecoration(color: Kolors.kPrimary, borderRadius: kRadiusTop),
           child: Center(
             child: ReusableText(
-                text: "Continue to Home",
+                text: 'Continue to Home',
                 style: appStyle(16, Kolors.kWhite, FontWeight.w600)),
           ),
         ),

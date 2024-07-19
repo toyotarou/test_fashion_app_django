@@ -24,7 +24,7 @@ class CustomAppBar extends HookWidget {
           Padding(
             padding: EdgeInsets.only(left: 3.w),
             child: ReusableText(
-                text: "Location",
+                text: 'Location',
                 style: appStyle(12, Kolors.kGray, FontWeight.normal)),
           ),
           SizedBox(
@@ -64,7 +64,7 @@ class CustomAppBar extends HookWidget {
             context.go('/search');
           },
           child: Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 12.0, vertical: 8),
+            padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 8),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
@@ -91,7 +91,7 @@ class CustomAppBar extends HookWidget {
                           width: 10.w,
                         ),
                         ReusableText(
-                            text: "Search",
+                            text: 'Search',
                             style: appStyle(14, Kolors.kGray, FontWeight.w400)),
                       ],
                     ),

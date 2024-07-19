@@ -10,15 +10,15 @@ void showCartPopup(BuildContext context) {
           title: Text(
             'Update Cart Item Qauntity',
             style: appStyle(
-              18.0,
+              18,
               Kolors.kGrayLight,
               FontWeight.bold,
             ),
           ),
           message: const Text(
-            "By updating the cart the app will refetch the data",
+            'By updating the cart the app will refetch the data',
             style: TextStyle(
-              fontSize: 16.0,
+              fontSize: 16,
             ),
           ),
           actions: <Widget>[

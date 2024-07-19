@@ -1,8 +1,9 @@
+// ignore_for_file: use_colored_box
+
 import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_vector_icons/flutter_vector_icons.dart';
-import 'package:provider/provider.dart';
 import 'package:test_fashion_app_django/common/utils/kcolors.dart';
 import 'package:test_fashion_app_django/common/utils/kstrings.dart';
 import 'package:test_fashion_app_django/common/widgets/app_style.dart';
@@ -38,7 +39,7 @@ class TrackOrderPage extends HookWidget {
       body: Container(
           color: Kolors.kWhite,
           child: Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 12.0, vertical: 8),
+            padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 8),
             child: ListView(
               children: [
 //                OrderTile(order: order!) ,
@@ -52,7 +53,7 @@ class TrackOrderPage extends HookWidget {
                   height: 10.h,
                 ),
                 ReusableText(
-                    text: "Order Details",
+                    text: 'Order Details',
                     style: appStyle(13, Kolors.kDark, FontWeight.w600)),
                 SizedBox(
                   height: 20.h,
@@ -61,7 +62,6 @@ class TrackOrderPage extends HookWidget {
                 Table(
                   border: TableBorder.all(
                     color: Kolors.kGrayLight,
-                    style: BorderStyle.solid,
                     width: 0.5,
                   ),
                   children: [
@@ -79,7 +79,7 @@ class TrackOrderPage extends HookWidget {
                         Padding(
                             padding: EdgeInsets.all(8.h),
                             child: Text(
-                              "\$ 10.00",
+                              '\$ 10.00',
                               style:
                                   appStyle(12, Kolors.kDark, FontWeight.normal),
                             )),
@@ -227,7 +227,9 @@ class SteppersTile extends StatelessWidget {
     required this.isLast,
   });
 
-  final String status, date, address;
+  final String status;
+  final String date;
+  final String address;
   final Color color;
   final IconData icon;
   final bool isLast;
@@ -273,7 +275,7 @@ class SteppersTile extends StatelessWidget {
             width: 10.w,
           ),
           Padding(
-            padding: const EdgeInsets.only(top: 3.0),
+            padding: const EdgeInsets.only(top: 3),
             child: SizedBox(
               width: ScreenUtil().screenWidth * 0.85,
               child: Row(
@@ -311,39 +313,39 @@ class SteppersTile extends StatelessWidget {
 List<TrackData> trackingData = [
   TrackData(
     icon: Ionicons.clipboard_outline,
-    date: "2024-04-07",
-    status: "Order Placed",
-    address: "1234, Elm St, Springfield",
+    date: '2024-04-07',
+    status: 'Order Placed',
+    address: '1234, Elm St, Springfield',
   ),
   TrackData(
     icon: Feather.package,
-    date: "2024-04-08",
-    status: "Processing",
-    address: "Processing Center, Springfield",
+    date: '2024-04-08',
+    status: 'Processing',
+    address: 'Processing Center, Springfield',
   ),
   TrackData(
     icon: MaterialCommunityIcons.truck_check_outline,
-    date: "2024-04-09",
-    status: "In Transit",
-    address: "On the way, Springfield",
+    date: '2024-04-09',
+    status: 'In Transit',
+    address: 'On the way, Springfield',
   ),
   TrackData(
     icon: Ionicons.checkbox_outline,
-    date: "2024-04-10",
-    status: "Delivered",
-    address: "1234, Elm St, Springfield",
+    date: '2024-04-10',
+    status: 'Delivered',
+    address: '1234, Elm St, Springfield',
   ),
 ];
 
 class TrackData {
-  final String date;
-  final String status;
-  final String address;
-  final IconData icon;
 
   TrackData(
       {required this.date,
       required this.status,
       required this.address,
       required this.icon});
+  final String date;
+  final String status;
+  final String address;
+  final IconData icon;
 }

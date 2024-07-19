@@ -2,6 +2,8 @@
 //
 //     final createCheckout = createCheckoutFromJson(jsonString);
 
+// ignore_for_file: avoid_dynamic_calls
+
 import 'dart:convert';
 
 CreateCheckout createCheckoutFromJson(String str) =>
@@ -10,12 +12,6 @@ CreateCheckout createCheckoutFromJson(String str) =>
 String createCheckoutToJson(CreateCheckout data) => json.encode(data.toJson());
 
 class CreateCheckout {
-  final String accesstoken;
-  final String fcm;
-  
-  final double totalAmount;
-  final List<CartItem> cartItems;
-  final int address;
 
   CreateCheckout({
     required this.address,
@@ -26,30 +22,30 @@ class CreateCheckout {
   });
 
   factory CreateCheckout.fromJson(Map<String, dynamic> json) => CreateCheckout(
-        address: json["address"],
-        accesstoken: json["accesstoken"],
-        fcm: json["fcm"],
-        totalAmount: json["totalAmount"]?.toDouble(),
+        address: json['address'],
+        accesstoken: json['accesstoken'],
+        fcm: json['fcm'],
+        totalAmount: json['totalAmount']?.toDouble(),
         cartItems: List<CartItem>.from(
-            json["cartItems"].map((x) => CartItem.fromJson(x))),
+            json['cartItems'].map(CartItem.fromJson)),
       );
+  final String accesstoken;
+  final String fcm;
+  
+  final double totalAmount;
+  final List<CartItem> cartItems;
+  final int address;
 
   Map<String, dynamic> toJson() => {
-        "address": address,
-        "accesstoken": accesstoken,
-        "fcm": fcm,
-        "totalAmount": totalAmount,
-        "cartItems": List<dynamic>.from(cartItems.map((x) => x.toJson())),
+        'address': address,
+        'accesstoken': accesstoken,
+        'fcm': fcm,
+        'totalAmount': totalAmount,
+        'cartItems': List<dynamic>.from(cartItems.map((x) => x.toJson())),
       };
 }
 
 class CartItem {
-  final String name;
-  final String size;
-  final String color;
-  final int id;
-  final double price;
-  final int cartQuantity;
 
   CartItem({
     required this.name,
@@ -61,20 +57,26 @@ class CartItem {
   });
 
   factory CartItem.fromJson(Map<String, dynamic> json) => CartItem(
-        name: json["name"],
-        size: json["size"],
-        color: json["color"],
-        id: json["id"],
-        price: json["price"]?.toDouble(),
-        cartQuantity: json["cartQuantity"],
+        name: json['name'],
+        size: json['size'],
+        color: json['color'],
+        id: json['id'],
+        price: json['price']?.toDouble(),
+        cartQuantity: json['cartQuantity'],
       );
+  final String name;
+  final String size;
+  final String color;
+  final int id;
+  final double price;
+  final int cartQuantity;
 
   Map<String, dynamic> toJson() => {
-        "name": name,
-        "size": size,
-        "color": color,
-        "id": id,
-        "price": price,
-        "cartQuantity": cartQuantity,
+        'name': name,
+        'size': size,
+        'color': color,
+        'id': id,
+        'price': price,
+        'cartQuantity': cartQuantity,
       };
 }

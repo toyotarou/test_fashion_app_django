@@ -1,3 +1,5 @@
+// ignore_for_file: avoid_positional_boolean_parameters
+
 import 'package:flutter/cupertino.dart';
 import 'package:test_fashion_app_django/common/utils/kcolors.dart';
 import 'package:test_fashion_app_django/common/widgets/app_style.dart';
@@ -11,7 +13,7 @@ void showErrorPopup(BuildContext context, String errorMessage, String? title,
         title: Text(
           title ?? 'Error',
           style: appStyle(
-            18.0,
+            18,
             Kolors.kGrayLight,
             FontWeight.bold,
           ),
@@ -19,7 +21,7 @@ void showErrorPopup(BuildContext context, String errorMessage, String? title,
         message: Text(
           errorMessage,
           style: const TextStyle(
-            fontSize: 16.0,
+            fontSize: 16,
           ),
         ),
         actions: <Widget>[

@@ -43,11 +43,11 @@ Future<dynamic> loginBottomSheet(BuildContext context) {
               height: 20.h,
             ),
             Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 8.0),
+              padding: const EdgeInsets.symmetric(horizontal: 8),
               child: GradientBtn(
-                text: "Proceed to Login",
+                text: 'Proceed to Login',
                 onTap: () {
-                  context.go("/login");
+                  context.go('/login');
                 },
                 btnHieght: 35.h,
                 radius: 16,

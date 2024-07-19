@@ -34,7 +34,6 @@ class MyApp extends StatelessWidget {
     return ScreenUtilInit(
       designSize: context.screenSize,
       minTextAdapt: true,
-      splitScreenMode: false,
       useInheritedMediaQuery: true,
       builder: (_, child) {
         return MaterialApp.router(
@@ -42,7 +41,7 @@ class MyApp extends StatelessWidget {
           routerConfig: router,
         );
       },
-      child: SplashScreen(),
+      child: const SplashScreen(),
     );
   }
 }

@@ -1,3 +1,5 @@
+// ignore_for_file: avoid_positional_boolean_parameters
+
 import 'package:get_storage/get_storage.dart';
 
 class Storage {
@@ -7,7 +9,6 @@ class Storage {
 
   void setString(String key, String value) {
     GetStorage().write(key, value);
-    
   }
 
   String? getString(String key) {
@@ -22,7 +23,7 @@ class Storage {
     return GetStorage().read(key);
   }
 
-   Future<void> removeKey(String key) {
+  Future<void> removeKey(String key) {
     return GetStorage().remove(key);
   }
 }

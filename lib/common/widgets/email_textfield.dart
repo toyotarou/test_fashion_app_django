@@ -4,7 +4,7 @@ import 'package:test_fashion_app_django/common/widgets/app_style.dart';
 
 class EmailTextField extends StatelessWidget {
   const EmailTextField({
-    Key? key,
+    super.key,
     this.prefixIcon,
     this.keyboardType,
     this.onEditingComplete,
@@ -13,7 +13,7 @@ class EmailTextField extends StatelessWidget {
     this.focusNode,
     this.initialValue,
     this.radius,
-  }) : super(key: key);
+  });
   final String? hintText;
   final double? radius;
   final Widget? prefixIcon;
@@ -34,7 +34,7 @@ class EmailTextField extends StatelessWidget {
         controller: controller,
         validator: (value) {
           if (value!.isEmpty) {
-            return "Please enter a valid value";
+            return 'Please enter a valid value';
           } else {
             return null;
           }

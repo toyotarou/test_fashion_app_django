@@ -8,7 +8,6 @@ class OfflinePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return  Column(
       mainAxisAlignment: MainAxisAlignment.center,
-      crossAxisAlignment: CrossAxisAlignment.center,
       children: [
         const Icon(
           Ionicons.wifi_outline,
@@ -19,7 +18,7 @@ class OfflinePage extends StatelessWidget {
            child: SizedBox(
             width: MediaQuery.of(context).size.width* 0.7,
              child: const Text(
-              "Oops! Seems like youare not connected to the internet.",
+              'Oops! Seems like youare not connected to the internet.',
               textAlign: TextAlign.center,
               style: TextStyle(fontSize: 16, color: Colors.black),
                      ),

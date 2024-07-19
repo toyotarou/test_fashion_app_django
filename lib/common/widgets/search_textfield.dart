@@ -36,7 +36,7 @@ class SearchTextField extends StatelessWidget {
         controller: controller,
         validator: (value) {
           if (value!.isEmpty) {
-            return "Please enter a valid value";
+            return 'Please enter a valid value';
           } else {
             return null;
           }
@@ -58,10 +58,10 @@ class SearchTextField extends StatelessWidget {
               borderSide: BorderSide(color: Colors.red, width: 0.7),
               borderRadius: BorderRadius.all(Radius.circular(16))),
           disabledBorder: const OutlineInputBorder(
-              borderSide: BorderSide(color: Kolors.kDark, width: 0.7),
+              borderSide: BorderSide(width: 0.7),
               borderRadius: BorderRadius.all(Radius.circular(16))),
           enabledBorder: const OutlineInputBorder(
-              borderSide: BorderSide(color: Kolors.kDark, width: 0.7),
+              borderSide: BorderSide(width: 0.7),
               borderRadius: BorderRadius.all(Radius.circular(16))),
           border: const OutlineInputBorder(
             borderSide: BorderSide(color: Kolors.kPrimary, width: 0.7),

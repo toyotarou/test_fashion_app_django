@@ -14,12 +14,12 @@ Future<dynamic> logoutBottomSheet(BuildContext context) {
         child: ListView(
           children: [
             Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 8.0),
+              padding: const EdgeInsets.symmetric(horizontal: 8),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   GradientBtn(
-                    text: "Cancel",
+                    text: 'Cancel',
                     borderColor: Kolors.kDark,
                     btnColor: Kolors.kWhite,
                     onTap: () => Navigator.pop(context),
@@ -28,7 +28,7 @@ Future<dynamic> logoutBottomSheet(BuildContext context) {
                     btnWidth: ScreenUtil().screenWidth / 2.2,
                   ),
                   GradientBtn(
-                    text: "Submit",
+                    text: 'Submit',
                     onTap: () {},
                     btnHieght: 35.h,
                     radius: 16,
