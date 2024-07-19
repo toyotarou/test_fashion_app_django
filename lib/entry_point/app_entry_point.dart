@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_vector_icons/flutter_vector_icons.dart';
+import 'package:provider/provider.dart';
 import 'package:test_fashion_app_django/common/utils/kcolors.dart';
+import 'package:test_fashion_app_django/controller/bottom_navigation_controller.dart';
 import 'package:test_fashion_app_django/screens/cart/cart_screen.dart';
 import 'package:test_fashion_app_django/screens/home/home_screen.dart';
 import 'package:test_fashion_app_django/screens/profile/profile_screen.dart';
@@ -27,7 +29,7 @@ class _AppEntryPointState extends State<AppEntryPoint> {
     return Scaffold(
       body: Stack(
         children: [
-          pageList[0],
+          pageList[context.watch<BottomNavigationController>().index],
           Align(
             alignment: Alignment.bottomCenter,
             child: Theme(
@@ -41,7 +43,10 @@ class _AppEntryPointState extends State<AppEntryPoint> {
                 selectedItemColor: Kolors.kPrimary,
                 unselectedItemColor: Kolors.kGray,
                 unselectedIconTheme: const IconThemeData(color: Colors.black38),
-                onTap: (i) {},
+                onTap: (i) {
+                  context.read<BottomNavigationController>().setIndex(i);
+                },
+                currentIndex: context.watch<BottomNavigationController>().index,
                 items: const [
                   BottomNavigationBarItem(
                       icon: Icon(

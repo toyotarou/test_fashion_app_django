@@ -5,6 +5,7 @@ import 'package:get_storage/get_storage.dart';
 import 'package:provider/provider.dart';
 import 'package:test_fashion_app_django/common/utils/app_routes.dart';
 import 'package:test_fashion_app_django/common/utils/environment.dart';
+import 'package:test_fashion_app_django/controller/bottom_navigation_controller.dart';
 import 'package:test_fashion_app_django/controller/on_boarding_controller.dart';
 import 'package:test_fashion_app_django/extensions/extensions.dart';
 import 'package:test_fashion_app_django/screens/splash_screen.dart';
@@ -20,6 +21,7 @@ void main() async {
     MultiProvider(
       providers: [
         ChangeNotifierProvider(create: (_) => OnBoardingController()),
+        ChangeNotifierProvider(create: (_) => BottomNavigationController()),
       ],
       child: const MyApp(),
     ),
