@@ -24,15 +24,17 @@ class _SplashScreenState extends State<SplashScreen> {
 
   ///
   _navigator() async => await Future.delayed(
-      const Duration(milliseconds: 3000),
-      () {
-        if (Storage().getBool('firstOpen') == null) {
+        const Duration(milliseconds: 3000),
+        () {
+          // if (Storage().getBool('firstOpen') == null) {
+          //   GoRouter.of(context).go('/onboarding');
+          // } else {
+          //   GoRouter.of(context).go('/home');
+          // }
+
           GoRouter.of(context).go('/onboarding');
-        } else {
-          GoRouter.of(context).go('/home');
-        }
-      },
-    );
+        },
+      );
 
   ///
   @override
