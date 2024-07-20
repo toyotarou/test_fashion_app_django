@@ -60,11 +60,15 @@ Widget Function(BuildContext, String, Object)? errorWidget =
         );
 
 List<String> images = [
-  'https://firebasestorage.googleapis.com/v0/b/authenification-b4dc9.appspot.com/o/uploads%2Fslider1.png?alt=media&token=8b27e621-e5ea-4ba4-ab15-0302d02c75f3',
-  'https://firebasestorage.googleapis.com/v0/b/authenification-b4dc9.appspot.com/o/uploads%2Fslider1.png?alt=media&token=8b27e621-e5ea-4ba4-ab15-0302d02c75f3',
-  'https://firebasestorage.googleapis.com/v0/b/authenification-b4dc9.appspot.com/o/uploads%2Fslider1.png?alt=media&token=8b27e621-e5ea-4ba4-ab15-0302d02c75f3',
-  'https://firebasestorage.googleapis.com/v0/b/authenification-b4dc9.appspot.com/o/uploads%2Fslider1.png?alt=media&token=8b27e621-e5ea-4ba4-ab15-0302d02c75f3',
-  'https://firebasestorage.googleapis.com/v0/b/authenification-b4dc9.appspot.com/o/uploads%2Fslider1.png?alt=media&token=8b27e621-e5ea-4ba4-ab15-0302d02c75f3',
+  'http://160.16.145.135/BrainLog/public/UPPHOTO/2020/2020-06-20/20200620_125143988.jpg',
+  'http://160.16.145.135/BrainLog/public/UPPHOTO/2020/2020-06-20/20200620_125224348.jpg',
+  'http://160.16.145.135/BrainLog/public/UPPHOTO/2020/2020-06-20/20200620_125844963.jpg',
+  'http://160.16.145.135/BrainLog/public/UPPHOTO/2020/2020-06-20/20200620_130349870.jpg',
+  'http://160.16.145.135/BrainLog/public/UPPHOTO/2020/2020-06-20/20200620_130448656.jpg',
+  'http://160.16.145.135/BrainLog/public/UPPHOTO/2020/2020-06-20/20200620_130844748.jpg',
+  'http://160.16.145.135/BrainLog/public/UPPHOTO/2020/2020-06-20/20200620_131444815.jpg',
+  'http://160.16.145.135/BrainLog/public/UPPHOTO/2020/2020-06-20/20200620_131955953.jpg',
+  'http://160.16.145.135/BrainLog/public/UPPHOTO/2020/2020-06-20/20200620_132710098.jpg'
 ];
 
 // [{"title":"Sneakers","id":3,"imageUrl":"https://firebasestorage.googleapis.com/v0/b/authenification-b4dc9.appspot.com/o/uploads%2Frunning_shoe.svg?alt=media&token=0dcb0e57-315e-457c-89dc-1233f6421368"},{"title":"T-Shirts","id":5,"imageUrl":"https://firebasestorage.googleapis.com/v0/b/authenification-b4dc9.appspot.com/o/uploads%2Fjersey.svg?alt=media&token=6ca7eabd-54b3-47bb-bb8f-41c3a8920171"},{"title":"Jackets","id":4,"imageUrl":"https://firebasestorage.googleapis.com/v0/b/authenification-b4dc9.appspot.com/o/uploads%2Fjacket.svg?alt=media&token=ffdc9a1e-917f-4e8f-b58e-4df2e6e8587e"},{"title":"Dresses","id":2,"imageUrl":"https://firebasestorage.googleapis.com/v0/b/authenification-b4dc9.appspot.com/o/uploads%2Fdress.svg?alt=media&token=cf832383-4c8a-4ee1-9676-b66c4d515a1c"},{"title":"Pants","id":1,"imageUrl":"https://firebasestorage.googleapis.com/v0/b/authenification-b4dc9.appspot.com/o/uploads%2Fjeans.svg?alt=media&token=eb62f916-a4c2-441a-a469-5684f1a62526"}]

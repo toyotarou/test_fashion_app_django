@@ -27,7 +27,9 @@ import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:test_fashion_app_django/entry_point/app_entry_point.dart';
 import 'package:test_fashion_app_django/screens/login/login_screen.dart';
+import 'package:test_fashion_app_django/screens/notification/notification_screen.dart';
 import 'package:test_fashion_app_django/screens/on_boarding/on_boarding_screen.dart';
+import 'package:test_fashion_app_django/screens/search/search_screen.dart';
 import 'package:test_fashion_app_django/screens/splash_screen.dart';
 
 final GlobalKey<NavigatorState> navigatorKey = GlobalKey<NavigatorState>();
@@ -61,10 +63,11 @@ final GoRouter _router = GoRouter(
 //       path: '/verification',
 //       builder: (context, state) => const VerificationPage(),
 //     ),
-//     GoRoute(
-//       path: '/search',
-//       builder: (context, state) => const SearchPage(),
-//     ),
+
+    GoRoute(
+      path: '/search',
+      builder: (context, state) => const SearchScreen(),
+    ),
 //     GoRoute(
 //       path: '/help',
 //       builder: (context, state) => const HelpCenterPage(),
@@ -100,10 +103,11 @@ final GoRouter _router = GoRouter(
 //       builder: (context, state) => const AddressesListPage(),
 //     ),
 //
-//      GoRoute(
-//       path: '/notifications',
-//       builder: (context, state) => const NotificationPage(),
-//     ),
+    GoRoute(
+      path: '/notifications',
+      builder: (context, state) => const NotificationScreen(),
+    ),
+
 //
 //      GoRoute(
 //       path: '/tracking',
