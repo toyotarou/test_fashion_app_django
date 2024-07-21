@@ -40,9 +40,10 @@ class _CategoriesScreenState extends State<CategoriesScreen> {
         itemBuilder: (context, index) {
           return ListTile(
             onTap: () {
-              context
-                  .read<CategoryController>()
-                  .setCategory(categories[index].title);
+              context.read<CategoryController>().setCategory(
+                    categories[index].title,
+                    categories[index].id,
+                  );
 
               context.push('/category');
             },
