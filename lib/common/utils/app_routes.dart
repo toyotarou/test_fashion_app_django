@@ -26,6 +26,8 @@ import 'package:fashion/src/splashscreen/splash_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:test_fashion_app_django/entry_point/app_entry_point.dart';
+import 'package:test_fashion_app_django/screens/categories/categories_screen.dart';
+import 'package:test_fashion_app_django/screens/category/category_screen.dart';
 import 'package:test_fashion_app_django/screens/login/login_screen.dart';
 import 'package:test_fashion_app_django/screens/notification/notification_screen.dart';
 import 'package:test_fashion_app_django/screens/on_boarding/on_boarding_screen.dart';
@@ -84,14 +86,16 @@ final GoRouter _router = GoRouter(
 //       path: '/register',
 //       builder: (context, state) => const RegistrationPage(),
 //     ),
-//     GoRoute(
-//       path: '/categories',
-//       builder: (context, state) => const CategoriesPage(),
-//     ),
-//      GoRoute(
-//       path: '/category',
-//       builder: (context, state) => const CategoryPage(),
-//     ),
+    GoRoute(
+      path: '/categories',
+      builder: (context, state) => const CategoriesScreen(),
+    ),
+
+    GoRoute(
+      path: '/category',
+      builder: (context, state) => const CategoryScreen(),
+    ),
+
 //
 //     GoRoute(
 //       path: '/addaddress',

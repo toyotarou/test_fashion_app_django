@@ -52,7 +52,7 @@ class _LastPageState extends State<LastPage> {
               ),
             ),
             SizedBox(height: 20.h),
-            GradientBtn(
+            CustomButton(
               text: 'start',
               onTap: () {
                 Storage().setBool('firstOpen', true);

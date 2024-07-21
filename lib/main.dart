@@ -6,6 +6,7 @@ import 'package:provider/provider.dart';
 import 'package:test_fashion_app_django/common/utils/app_routes.dart';
 import 'package:test_fashion_app_django/common/utils/environment.dart';
 import 'package:test_fashion_app_django/controller/bottom_navigation_controller.dart';
+import 'package:test_fashion_app_django/controller/category_controller.dart';
 import 'package:test_fashion_app_django/controller/on_boarding_controller.dart';
 import 'package:test_fashion_app_django/extensions/extensions.dart';
 import 'package:test_fashion_app_django/screens/splash_screen.dart';
@@ -22,6 +23,7 @@ void main() async {
       providers: [
         ChangeNotifierProvider(create: (_) => OnBoardingController()),
         ChangeNotifierProvider(create: (_) => BottomNavigationController()),
+        ChangeNotifierProvider(create: (_) => CategoryController()),
       ],
       child: const MyApp(),
     ),
