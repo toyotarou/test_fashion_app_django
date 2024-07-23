@@ -4,6 +4,8 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:go_router/go_router.dart';
 import 'package:provider/provider.dart';
 import 'package:test_fashion_app_django/common/utils/kcolors.dart';
+import 'package:test_fashion_app_django/common/widgets/app_style.dart';
+import 'package:test_fashion_app_django/common/widgets/reusable_text.dart';
 import 'package:test_fashion_app_django/const/constants.dart';
 import 'package:test_fashion_app_django/controller/category_controller.dart';
 
@@ -35,6 +37,7 @@ class _CategoriesListState extends State<CategoriesList> {
               },
               child: SizedBox(
                 child: Column(
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: [
                     CircleAvatar(
                       backgroundColor: Kolors.kSecondaryLight,
@@ -45,6 +48,14 @@ class _CategoriesListState extends State<CategoriesList> {
                           width: 40.w,
                           height: 40.h,
                         ),
+                      ),
+                    ),
+                    ReusableText(
+                      text: categories[index].title,
+                      style: appStyle(
+                        12,
+                        Kolors.kGray,
+                        FontWeight.normal,
                       ),
                     ),
                   ],
