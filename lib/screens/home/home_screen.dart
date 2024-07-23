@@ -7,6 +7,7 @@ import 'package:test_fashion_app_django/screens/home/custom_appbar.dart';
 import 'package:test_fashion_app_django/screens/home/home_header.dart';
 import 'package:test_fashion_app_django/screens/home/home_slider.dart';
 import 'package:test_fashion_app_django/screens/home/home_tabs.dart';
+import 'package:test_fashion_app_django/screens/products/explore_product.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -72,6 +73,8 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
           const CategoriesList(),
           SizedBox(height: 15.h),
           HomeTabs(tabController: tabController),
+          SizedBox(height: 15.h),
+          const ExploreProduct(),
         ],
       ),
     );

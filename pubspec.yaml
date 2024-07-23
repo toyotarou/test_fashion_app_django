@@ -26,7 +26,7 @@ dependencies:
   cached_network_image:
   flutter_svg:
   flutter_hooks:
-  flutter_staggered_grid_view:
+  flutter_staggered_grid_view: ^0.7.0
   go_router:
   get_storage:
   page_view_dot_indicator:
