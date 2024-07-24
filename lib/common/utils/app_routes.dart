@@ -31,6 +31,7 @@ import 'package:test_fashion_app_django/screens/category/category_screen.dart';
 import 'package:test_fashion_app_django/screens/login/login_screen.dart';
 import 'package:test_fashion_app_django/screens/notification/notification_screen.dart';
 import 'package:test_fashion_app_django/screens/on_boarding/on_boarding_screen.dart';
+import 'package:test_fashion_app_django/screens/products/product_screen.dart';
 import 'package:test_fashion_app_django/screens/search/search_screen.dart';
 import 'package:test_fashion_app_django/screens/splash_screen.dart';
 
@@ -133,13 +134,13 @@ final GoRouter _router = GoRouter(
 //       builder: (context, state) => const FailedPayment(),
 //     ),
 //
-//     GoRoute(
-//       path: '/product/:id',
-//       builder: (BuildContext context, GoRouterState state) {
-//         final productId = state.pathParameters['id'];
-//         return ProductPage(productId: productId.toString());
-//       },
-//     ),
+    GoRoute(
+      path: '/product/:id',
+      builder: (BuildContext context, GoRouterState state) {
+        final productId = state.pathParameters['id'];
+        return ProductScreen(productId: productId.toString());
+      },
+    ),
   ],
 );
 

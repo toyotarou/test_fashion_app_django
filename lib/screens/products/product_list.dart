@@ -2,9 +2,12 @@ import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_vector_icons/flutter_vector_icons.dart';
+import 'package:go_router/go_router.dart';
+import 'package:provider/provider.dart';
 import 'package:test_fashion_app_django/common/utils/kcolors.dart';
 import 'package:test_fashion_app_django/common/widgets/app_style.dart';
 import 'package:test_fashion_app_django/common/widgets/reusable_text.dart';
+import 'package:test_fashion_app_django/controller/product_controller.dart';
 import 'package:test_fashion_app_django/models/product_model.dart';
 
 class ProductList extends StatefulWidget {
@@ -29,7 +32,11 @@ class _ProductListState extends State<ProductList> {
 //    final accessToken = Storage().getString('accessToken');
 
     return GestureDetector(
-      onTap: () {},
+      onTap: () {
+        context.read<ProductController>().setProduct(widget.product);
+
+        context.push('/product/${widget.product.id}');
+      },
       child: ClipRRect(
         borderRadius: BorderRadius.circular(10),
         // ignore: use_colored_box
@@ -53,12 +60,15 @@ class _ProductListState extends State<ProductList> {
                     Positioned(
                       right: 10.h,
                       top: 10.h,
-                      child: const CircleAvatar(
-                        backgroundColor: Kolors.kSecondaryLight,
-                        child: Icon(
-                          AntDesign.heart,
-                          color: Kolors.kRed,
-                          size: 18,
+                      child: GestureDetector(
+                        onTap: widget.onTap,
+                        child: const CircleAvatar(
+                          backgroundColor: Kolors.kSecondaryLight,
+                          child: Icon(
+                            AntDesign.heart,
+                            color: Kolors.kRed,
+                            size: 18,
+                          ),
                         ),
                       ),
                     ),

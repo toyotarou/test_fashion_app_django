@@ -1,4 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:test_fashion_app_django/common/utils/kcolors.dart';
+import 'package:test_fashion_app_django/common/utils/kstrings.dart';
+import 'package:test_fashion_app_django/common/widgets/app_style.dart';
+import 'package:test_fashion_app_django/common/widgets/reusable_text.dart';
+import 'package:test_fashion_app_django/screens/products/explore_product.dart';
 
 class WishlistScreen extends StatefulWidget {
   const WishlistScreen({super.key});
@@ -10,14 +15,19 @@ class WishlistScreen extends StatefulWidget {
 class _WishlistScreenState extends State<WishlistScreen> {
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
-      body: SafeArea(
-        child: Column(
-          children: [
-            Text('WishlistScreen'),
-          ],
+    return Scaffold(
+      appBar: AppBar(
+        automaticallyImplyLeading: false,
+        title: ReusableText(
+          text: AppText.kWishlist,
+          style: appStyle(
+            16,
+            Kolors.kPrimary,
+            FontWeight.bold,
+          ),
         ),
       ),
+      body: const ExploreProduct(),
     );
   }
 }
