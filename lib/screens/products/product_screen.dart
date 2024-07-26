@@ -6,13 +6,21 @@ import 'package:flutter_image_slideshow/flutter_image_slideshow.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_vector_icons/flutter_vector_icons.dart';
 import 'package:provider/provider.dart';
+import 'package:test_fashion_app_django/common/services/storage.dart';
 import 'package:test_fashion_app_django/common/utils/kcolors.dart';
 import 'package:test_fashion_app_django/common/widgets/app_style.dart';
 import 'package:test_fashion_app_django/common/widgets/back_button.dart';
+import 'package:test_fashion_app_django/common/widgets/error_modal.dart';
+import 'package:test_fashion_app_django/common/widgets/login_bottom_sheet.dart';
 import 'package:test_fashion_app_django/common/widgets/reusable_text.dart';
 import 'package:test_fashion_app_django/const/constants.dart';
+import 'package:test_fashion_app_django/controller/colors_sizes_controller.dart';
 import 'package:test_fashion_app_django/controller/product_controller.dart';
 import 'package:test_fashion_app_django/screens/products/expandable_text.dart';
+import 'package:test_fashion_app_django/screens/products/product_bottom_bar.dart';
+import 'package:test_fashion_app_django/screens/products/product_color_widget.dart';
+import 'package:test_fashion_app_django/screens/products/product_size_widget.dart';
+import 'package:test_fashion_app_django/screens/products/similar_products.dart';
 
 class ProductScreen extends StatefulWidget {
   const ProductScreen({super.key, required this.productId});
@@ -24,8 +32,11 @@ class ProductScreen extends StatefulWidget {
 }
 
 class _ProductScreenState extends State<ProductScreen> {
+  ///
   @override
   Widget build(BuildContext context) {
+    final accessToken = Storage().getString('accessToken');
+
     return Consumer<ProductController>(
         builder: (context, productController, child) {
       return Scaffold(
@@ -135,7 +146,82 @@ class _ProductScreenState extends State<ProductScreen> {
                     text: productController.product!.description),
               ),
             ),
+            SliverToBoxAdapter(
+              child: Padding(
+                padding: EdgeInsets.symmetric(horizontal: 8.w),
+                child: Divider(
+                  thickness: 0.5.h,
+                ),
+              ),
+            ),
+            SliverToBoxAdapter(
+              child: SizedBox(
+                height: 10.h,
+              ),
+            ),
+            SliverToBoxAdapter(
+              child: Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 8),
+                child: ReusableText(
+                  text: 'Select Size:',
+                  style: appStyle(16, Kolors.kDark, FontWeight.w600),
+                ),
+              ),
+            ),
+            const SliverToBoxAdapter(
+              child: Padding(
+                padding: EdgeInsets.all(8),
+                child: ProductSizeWidget(),
+              ),
+            ),
+            SliverToBoxAdapter(
+              child: Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 8),
+                child: ReusableText(
+                  text: 'Select Color:',
+                  style: appStyle(16, Kolors.kDark, FontWeight.w600),
+                ),
+              ),
+            ),
+            const SliverToBoxAdapter(
+              child: Padding(
+                padding: EdgeInsets.all(8),
+                child: ProductColorWidget(),
+              ),
+            ),
+            SliverToBoxAdapter(
+              child: Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 8),
+                child: ReusableText(
+                  text: 'Similar Products:',
+                  style: appStyle(16, Kolors.kDark, FontWeight.w600),
+                ),
+              ),
+            ),
+            const SliverToBoxAdapter(
+              child: SimilarProducts(),
+            ),
           ],
+        ),
+        bottomNavigationBar: ProductBottomBar(
+          onPressed: () {
+            if (accessToken == null) {
+              loginBottomSheet(context);
+            } else {
+              if (context.read<ColorsSizesController>().colors == '' ||
+                  context.read<ColorsSizesController>().sizes == '') {
+                showErrorPopup(
+                  context,
+                  'Please select color or size',
+                  'Error Adding to Cart',
+                  true,
+                );
+              } else {
+                print('Add to cart');
+              }
+            }
+          },
+          price: productController.product!.price.toString(),
         ),
       );
     });

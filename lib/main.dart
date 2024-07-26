@@ -7,6 +7,7 @@ import 'package:test_fashion_app_django/common/utils/app_routes.dart';
 import 'package:test_fashion_app_django/common/utils/environment.dart';
 import 'package:test_fashion_app_django/controller/bottom_navigation_controller.dart';
 import 'package:test_fashion_app_django/controller/category_controller.dart';
+import 'package:test_fashion_app_django/controller/colors_sizes_controller.dart';
 import 'package:test_fashion_app_django/controller/home_tab_controller.dart';
 import 'package:test_fashion_app_django/controller/on_boarding_controller.dart';
 import 'package:test_fashion_app_django/controller/product_controller.dart';
@@ -28,6 +29,7 @@ void main() async {
         ChangeNotifierProvider(create: (_) => CategoryController()),
         ChangeNotifierProvider(create: (_) => HomeTabController()),
         ChangeNotifierProvider(create: (_) => ProductController()),
+        ChangeNotifierProvider(create: (_) => ColorsSizesController()),
       ],
       child: const MyApp(),
     ),
