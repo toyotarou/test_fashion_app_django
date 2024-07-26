@@ -32,6 +32,9 @@ import 'package:test_fashion_app_django/screens/login/login_screen.dart';
 import 'package:test_fashion_app_django/screens/notification/notification_screen.dart';
 import 'package:test_fashion_app_django/screens/on_boarding/on_boarding_screen.dart';
 import 'package:test_fashion_app_django/screens/products/product_screen.dart';
+import 'package:test_fashion_app_django/screens/profile/orders_screen.dart';
+import 'package:test_fashion_app_django/screens/profile/policy_screen.dart';
+import 'package:test_fashion_app_django/screens/profile/shipping_address_screen.dart';
 import 'package:test_fashion_app_django/screens/search/search_screen.dart';
 import 'package:test_fashion_app_django/screens/splash_screen.dart';
 
@@ -58,10 +61,10 @@ final GoRouter _router = GoRouter(
 //       path: '/review',
 //       builder: (context, state) => const ReviewsPage(),
 //     ),
-//     GoRoute(
-//       path: '/policy',
-//       builder: (context, state) => const PolicyPage(),
-//     ),
+    GoRoute(
+      path: '/policy',
+      builder: (context, state) => const PolicyScreen(),
+    ),
 //     GoRoute(
 //       path: '/verification',
 //       builder: (context, state) => const VerificationPage(),
@@ -75,10 +78,10 @@ final GoRouter _router = GoRouter(
 //       path: '/help',
 //       builder: (context, state) => const HelpCenterPage(),
 //     ),
-//     GoRoute(
-//       path: '/orders',
-//       builder: (context, state) => const OrdersPage(),
-//     ),
+    GoRoute(
+      path: '/orders',
+      builder: (context, state) => const OrdersScreen(),
+    ),
     GoRoute(
       path: '/login',
       builder: (context, state) => const LoginScreen(),
@@ -102,12 +105,12 @@ final GoRouter _router = GoRouter(
 //       path: '/addaddress',
 //       builder: (context, state) => const AddAddress(),
 //     ),
-//
-//     GoRoute(
-//       path: '/addresses',
-//       builder: (context, state) => const AddressesListPage(),
-//     ),
-//
+
+    GoRoute(
+      path: '/addresses',
+      builder: (context, state) => const ShippingAddressScreen(),
+    ),
+
     GoRoute(
       path: '/notifications',
       builder: (context, state) => const NotificationScreen(),
