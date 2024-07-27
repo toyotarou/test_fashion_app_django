@@ -2,11 +2,13 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_vector_icons/flutter_vector_icons.dart';
 import 'package:go_router/go_router.dart';
+import 'package:test_fashion_app_django/common/services/storage.dart';
 import 'package:test_fashion_app_django/common/utils/kcolors.dart';
 import 'package:test_fashion_app_django/common/widgets/app_style.dart';
 import 'package:test_fashion_app_django/common/widgets/custom_button.dart';
 import 'package:test_fashion_app_django/common/widgets/help_bottom_sheet.dart';
 import 'package:test_fashion_app_django/common/widgets/reusable_text.dart';
+import 'package:test_fashion_app_django/screens/login/login_screen.dart';
 import 'package:test_fashion_app_django/screens/profile/profile_tile_widget.dart';
 
 class ProfileScreen extends StatefulWidget {
@@ -17,8 +19,15 @@ class ProfileScreen extends StatefulWidget {
 }
 
 class _ProfileScreenState extends State<ProfileScreen> {
+  ///
   @override
   Widget build(BuildContext context) {
+    final accessToken = Storage().getString('accessToken');
+
+    if (accessToken == null) {
+      return const LoginScreen();
+    }
+
     return Scaffold(
       body: SafeArea(
         child: ListView(

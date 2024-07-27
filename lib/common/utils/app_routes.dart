@@ -29,6 +29,7 @@ import 'package:test_fashion_app_django/entry_point/app_entry_point.dart';
 import 'package:test_fashion_app_django/screens/categories/categories_screen.dart';
 import 'package:test_fashion_app_django/screens/category/category_screen.dart';
 import 'package:test_fashion_app_django/screens/login/login_screen.dart';
+import 'package:test_fashion_app_django/screens/login/registration_screen.dart';
 import 'package:test_fashion_app_django/screens/notification/notification_screen.dart';
 import 'package:test_fashion_app_django/screens/on_boarding/on_boarding_screen.dart';
 import 'package:test_fashion_app_django/screens/products/product_screen.dart';
@@ -86,10 +87,10 @@ final GoRouter _router = GoRouter(
       path: '/login',
       builder: (context, state) => const LoginScreen(),
     ),
-//     GoRoute(
-//       path: '/register',
-//       builder: (context, state) => const RegistrationPage(),
-//     ),
+    GoRoute(
+      path: '/register',
+      builder: (context, state) => const RegistrationScreen(),
+    ),
     GoRoute(
       path: '/categories',
       builder: (context, state) => const CategoriesScreen(),
